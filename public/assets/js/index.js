@@ -1,19 +1,25 @@
-const fs = require('fs');
+// const fs = require('fs');
 
-// express
-const express = require("express");
+// // express
+// const express = require("express");
 
-// setup the server (app)
-const app = express();
+// // setup the server (app)
+// const app = express();
 
-// setup a port
-const PORT = process.env.PORT || 4500;
+// // setup a port
+// const PORT = process.env.PORT || 4500;
 
-app.use(express.static("public"));
+// app.use(express.static("public"));
 
-// Sets up the Express app to handle data parsing
-app.use(express.urlencoded({ extended: true }));
-app.use(express.json());
+// // Sets up the Express app to handle data parsing
+// app.use(express.urlencoded({ extended: true }));
+// app.use(express.json());
+
+// // GET /api/reservations - gives back an array of reservations
+// app.get("/api/notes", (req, res) => res.json(notes));
+
+// // GET /api/waitlist - gives back waitlisted reservations
+// app.get("/*", (req, res) => res.json(index));
 
 let noteTitle;
 let noteText;
