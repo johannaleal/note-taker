@@ -1,7 +1,8 @@
+// Include the path package to get the correct file path for html
 const path = require("path");
 
+// Routing
 module.exports = (app) => {
-
     app.get("/", (req, res) => {
         res.sendFile(path.join(__dirname, "../public/index.html"));
     });
