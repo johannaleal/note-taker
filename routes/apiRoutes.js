@@ -1,11 +1,7 @@
 const fs = require("fs");
 const path = require("path");
 
-//let notes = require("../db/db.json");
-let notes = [];
-
 module.exports = (app) => {
-    //app.get("/api/notes", (req, res) => res.json(notes));
     app.get("/api/notes", (req, res) => {
         res.sendFile(path.join(__dirname, "../db/db.json"));
     });
@@ -14,17 +10,20 @@ module.exports = (app) => {
         fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (err, data) => {
             if (err) throw(err);
 
-            let dbJSON = JSON.parse(data);
+            let notesArray = JSON.parse(data);
             let newNote = req.body;
+            let nextId = 1;
 
-            dbJSON.forEach(note => {
-                notes.push(note);
-            });
+            if (notesArray.length > 0) {
+                nextId = (Math.max(...(notesArray.map(note => note.id)))) + 1;
+            };
+
+            newNote.id = nextId;
+            notesArray.push(newNote);
+            res.json(notesArray[notesArray.length - 1]);
+
+            fs.writeFileSync(path.join(__dirname, "../db/db.json"), JSON.stringify(notesArray));
         })
     });
 };
 
-function init () {
-
-
-}
