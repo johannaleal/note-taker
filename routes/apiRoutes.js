@@ -1,14 +1,17 @@
+// Required packages
 const fs = require("fs");
 const path = require("path");
 
 module.exports = (app) => {
+    // Route to get all notes in JSON file
     app.get("/api/notes", (req, res) => {
         res.sendFile(path.join(__dirname, "../db/db.json"));
     });
 
+    // Route to Post a new note data entered
     app.post("/api/notes", (req, res) => {
         // Read the JSON file that holds any notes saved.
-        fs.readFile(path.join(__dirname, "../db/db.json"), "utf8", (err, data) => {
+        fs.readFileSync(path.join(__dirname, "../db/db.json"), "utf8", (err, data) => {
             if (err) throw(err);
 
             // Store the JSON data in an array variable.
@@ -33,6 +36,22 @@ module.exports = (app) => {
             // Write the notes array to the JSON file to save the data.
             fs.writeFileSync(path.join(__dirname, "../db/db.json"), JSON.stringify(notesArray));
         })
+    });
+
+    // Route to delete note by Id
+    app.delete("/api/notes/:id", (req, res) => {
+        // Read the JSON file that holds any notes saved.
+        let notesArray = fs.readFileSync(path.join(__dirname, "../db/db.json"), "utf8", (err) => {throw(err)});
+
+        // Store the JSON data in an array variable.
+        notesArray = JSON.parse(notesArray);
+        let remainingNotes = notesArray.filter(note => note.id !== parseInt(req.params.id));
+
+        // Write the notes array to the JSON file to save the data.
+        fs.writeFileSync(path.join(__dirname, "../db/db.json"), JSON.stringify(remainingNotes), (err) => {throw (err)});
+    
+        // Respond with the remaining notes.
+        res.json(remainingNotes);
     });
 };
 
