@@ -7,6 +7,7 @@
 In this project, I have created a web application that can be used to write, save, and delete notes via a user-friendly interface. This application uses an Express.js back end and saves and retrieves notes from a JSON file.
 
 ## Table of Contents
+
 * [Installation](#installation)
 * [Usage](#usage)
 * [Screenshots](#screenshots)
@@ -18,6 +19,7 @@ In this project, I have created a web application that can be used to write, sav
 * [Questions](#questions)
 
 ## Installation
+
 1. Clone this repo to your machine.
 2. Install node.js.
 3. Install npm package by typing:
@@ -29,7 +31,9 @@ _npm install express_
 _npm i -D nodemon_
 
 ## Usage
+
 To run this app locally on your machine:
+
 1. Open the terminal in the main directory of the app, where the server.js file is.
 2. Run the following command to start the server:
 node server
@@ -37,15 +41,15 @@ node server
 
 ## Screenshots
 
-#### Index.html Page
+### Index.html Page
 
 ![Index Page](./images/default-page.png)
 
-#### New Note Page
+### New Note Page
 
 ![New Note Page](./images/note-page.png)
 
-#### Note Page
+### Note Page
 
 ![Note Page](./images/new-note.png)
 
@@ -58,7 +62,9 @@ node server
 [Code Repository](https://github.com/johannaleal/note-taker)
 
 ## Tests
+
 To test follow these instructions:
+
 1. On the default page, click on the __Get Started__ button. This should take you to the Notes page.
 2. Enter a note title and note text. Once you start typing the note text, a save icon will display in the upper right-hand corner. Click it to save your note.
 3. Once you save a note it will display in a list on the left-hand side.
@@ -66,15 +72,17 @@ To test follow these instructions:
 5. If you click on the trash icon next to a note, it will be deleted.
 
 ## License
+
 This application is covered under license: MIT License
 
 ## Contributing
+
 If you would like to contribute to this repository, please contact me via email below to discuss the changes you wish to make.
 
 ## Questions
-### Contact Information:
+
+### Contact Information
 
 GitHub Profile: [@johannaleal](http://github.com/johannaleal)
 
-Email: <johannarleal@gmail.com>
-    
+Email: <johannarleal@gmail.com
