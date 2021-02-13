@@ -1,13 +1,13 @@
 const path = require("path");
 
-const route = require("express").Router();
+module.exports = (app) => {
 
-route.get("/notes", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/notes.html"));
-});
+    app.get("/notes", (req, res) => {
+        res.sendFile(path.join(__dirname, "../public/notes.html"));
+    });
 
-route.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/index.html"));
-});
-
-module.exports = route;
+    // If no matching route is found, default to index.html file.
+    app.get("*", (req, res) => {
+        res.sendFile(path.join(__dirname, "../public/index.html"));
+    });
+};
