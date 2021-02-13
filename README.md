@@ -83,4 +83,4 @@ If you would like to contribute to this repository, please contact me via email 
 
 GitHub Profile: [@johannaleal](http://github.com/johannaleal)
 
-Email: <johannarleal@gmail.com
+Email: johannarleal@gmail.com
