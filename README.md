@@ -10,9 +10,11 @@ In this project, I have created a web application that can be used to write, sav
 * [Installation](#installation)
 * [Usage](#usage)
 * [Screenshots](#screenshots)
+* [Tests](#tests)
+* [Deployed Website](#website)
+* [Repository](#repository)
 * [License](#license)
 * [Contributing](#contributing)
-* [Tests](#tests)
 * [Questions](#questions)
 
 ## Installation
@@ -47,11 +49,13 @@ node server
 
 ![Note Page](./images/new-note.png)
 
-## License
-This application is covered under license: MIT License
+## Website
 
-## Contributing
-If you would like to contribute to this repository, please contact me via email below to discuss the changes you wish to make.
+[Deployed Website](https://note-taker-johanna.herokuapp.com/)
+
+## Repository
+
+[Code Repository](https://github.com/johannaleal/note-taker)
 
 ## Tests
 To test follow these instructions:
@@ -60,6 +64,12 @@ To test follow these instructions:
 3. Once you save a note it will display in a list on the left-hand side.
 4. If you click a note on the left-hand side, it should display on the right-hand side of the page.
 5. If you click on the trash icon next to a note, it will be deleted.
+
+## License
+This application is covered under license: MIT License
+
+## Contributing
+If you would like to contribute to this repository, please contact me via email below to discuss the changes you wish to make.
 
 ## Questions
 ### Contact Information:
